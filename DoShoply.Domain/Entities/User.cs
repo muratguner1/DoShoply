@@ -1,6 +1,8 @@
-﻿namespace DoShoply.Domain.Entities
+﻿using Microsoft.AspNetCore.Identity;
+
+namespace DoShoply.Domain.Entities
 {
-    public class User
+    public class User : IdentityUser
     {
         public string Name { get; set; }
         public string Email { get; set; }

@@ -1,6 +1,8 @@
-﻿namespace DoShoply.Domain.Entities
+﻿using DoShoply.Domain.Base;
+
+namespace DoShoply.Domain.Entities
 {
-    public class MainCategory
+    public class MainCategory : BaseEntity
     {
         public string CategoryName { get; set; }
         public string CategoryDescription { get; set; }

@@ -1,6 +1,8 @@
-﻿namespace DoShoply.Domain.Entities
+﻿using DoShoply.Domain.Base;
+
+namespace DoShoply.Domain.Entities
 {
-    public class Checkout
+    public class Checkout : BaseEntity
     {
         public string Address { get; set; }
         public string PhoneNumber { get; set; }
