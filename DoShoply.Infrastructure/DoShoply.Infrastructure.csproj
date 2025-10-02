@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DoShoply.Core\DoShoply.Core.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,10 +1,8 @@
-﻿
-
-using System.Linq.Expressions;
+﻿using System.Linq.Expressions;
 using DoShoply.Domain.Extensions;
 using DoShoply.Persistence.Contexts;
-using DoShoply.Persistence.Repositories.Interface;
 using Microsoft.EntityFrameworkCore;
+using DoShoply.Core.Interfaces.IRepositories;
 
 namespace DoShoply.Persistence.Repositories
 {
@@ -79,6 +77,14 @@ namespace DoShoply.Persistence.Repositories
                 PageSize = pageSize
             };
 
+        }
+
+        public Task<bool> IsAnyItem(Expression<Func<T, bool>> filter = null)
+        {
+            IQueryable<T> query = Table.AsQueryable();
+            if (filter != null)
+                query = query.Where(filter);
+            return query.AnyAsync();
         }
 
         public async Task<T> Update(Guid id, T entity)

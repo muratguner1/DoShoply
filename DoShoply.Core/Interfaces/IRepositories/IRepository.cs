@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq.Expressions;
 using DoShoply.Domain.Extensions;
 
-namespace DoShoply.Persistence.Repositories.Interface
+namespace DoShoply.Core.Interfaces.IRepositories
 {
     public interface IRepository<T> where T : new()
     {
         Task<T> GetById(Guid id);
+        Task<bool> IsAnyItem(Expression<Func<T, bool>> filter = null);
         Task<IEnumerable<T>> GetAll();
         Task<T> Add(T entity);
         Task<T> Update(Guid id, T entity);

@@ -16,6 +16,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DoShoply.Core\DoShoply.Core.csproj" />
+    <ProjectReference Include="..\DoShoply.Infrastructure\DoShoply.Infrastructure.csproj" />
+    <ProjectReference Include="..\DoShoply.Persistence\DoShoply.Persistence.csproj" />
   </ItemGroup>
 
 </Project>
